@@ -1,3 +1,4 @@
+
 import { Description, ShopImage, Title } from "../styles";
 
 const Home = () => {
