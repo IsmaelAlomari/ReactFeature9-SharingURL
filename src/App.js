@@ -16,7 +16,7 @@ import ProductList from "./components/ProductList";
 import { ThemeProvider } from "styled-components";
 // Data
 import products from "./products";
-import { Link } from "react-router-dom";
+import NewProduct from "./components/NewProduct"
 
 
 const theme = {
@@ -59,14 +59,15 @@ function App() {
       <GlobalStyle />
       <NavBar currentTheme={currentTheme} toggleTheme = {toggleTheme} />
      
-      <Switch> 
+      <Switch>
+        <Route path="/newproduct" >
+         <NewProduct/>
+          </Route> 
         <Route path="/products/:productSlug">
-          <ProductDetail products={_products} deleteProduct={deleteProduct} />
+          <ProductDetail/>
         </Route>
         <Route path="/products">
-            <ProductList products={_products}
-        deleteProduct={deleteProduct}
-        />
+            <ProductList/>
           </Route>
         <Route exact path="/">
          

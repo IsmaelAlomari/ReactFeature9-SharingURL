@@ -5,10 +5,13 @@ import ProductItem from "./ProductItem";
 import SearchBar from "./SearchBar";
 import { useState } from "react";
 
+import { useSelector } from "react-redux";
+
 const ProductList = (props) => {
   const [query, setQuery] = useState("");
 
-  const productList = props.products
+  const products= useSelector(state => state.products)
+  let productList = products
     .filter((product) =>
       product.name.toLowerCase().includes(query.toLowerCase())
     )
@@ -16,13 +19,13 @@ const ProductList = (props) => {
       <ProductItem
         product={product}
         key={product.id}
-        deleteProduct={props.deleteProduct}
       />
     ));
 
   return (
     <div>
       <SearchBar setQuery={setQuery} />
+     
       <ListWrapper>{productList}</ListWrapper>
     </div>
   );

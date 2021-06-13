@@ -3,10 +3,12 @@ import DeleteButton from "./buttons/DeleteButton";
 // Styling
 import { ProductWrapper } from "../styles";
 import { Link } from "react-router-dom";
+import {deleteProduct} from "../store/actions"
+import { useDispatch } from "react-redux";
 
 const ProductItem = (props) => {
   const product = props.product;
-
+  const dispatch = useDispatch()
   return (
     <ProductWrapper>
       <img
@@ -16,8 +18,7 @@ const ProductItem = (props) => {
       <p>{product.name}</p>
       <p className="product-price">{product.price} KD</p>
       <DeleteButton
-        productId={product.id}
-        deleteProduct={props.deleteProduct}
+        deleteProduct={()=> dispatch(deleteProduct(product.id))}
       />
       <Link to={`./products/${product.slug}`}>More Details</Link>
     </ProductWrapper>
