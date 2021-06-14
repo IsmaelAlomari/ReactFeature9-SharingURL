@@ -21,15 +21,15 @@ import NewProduct from "./components/NewProduct"
 
 const theme = {
   light: {
-    mainColor: "#242424", // main font color
+    mainColor: "#0c4271", // main font color
     backgroundColor: "#fefafb", // main background color
-    pink: "#ff85a2",
+    pink: "#ff3232",
     red: "#ff3232",
   },
   dark: {
-    mainColor: "#fefafb", // main font color
-    backgroundColor: "#242424", // main background color
-    pink: "#ff85a2",
+    mainColor: "#ff96ad", // main font color
+    backgroundColor: ("#242424"), // main background color
+    pink: "#ff3232",
     red: "#ff3232",
   },
 };
@@ -60,7 +60,7 @@ function App() {
       <NavBar currentTheme={currentTheme} toggleTheme = {toggleTheme} />
      
       <Switch>
-        <Route path="/newproduct" >
+        <Route path="/products/:productSlug/edit" >
          <NewProduct/>
           </Route> 
         <Route path="/products/:productSlug">

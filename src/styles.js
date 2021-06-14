@@ -27,6 +27,7 @@ export const DetailWrapper = styled.div`
 
 export const GlobalStyle = createGlobalStyle`
   body {
+    
     color: ${(props) => props.theme.mainColor};
     background-color: ${(props) => props.theme.backgroundColor}
   }
@@ -66,7 +67,7 @@ export const ShopImage = styled.img`
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 75%;
 `;
 
 export const ThemeButton = styled.button`
@@ -85,7 +86,7 @@ export const NavProduct = styled(NavLink)`
 
 color : ${props => props.theme.mainColor};
  &.active {
-  background-color : yellow
+  background-color : #b6c9f0
 }
 
 `;
@@ -93,9 +94,17 @@ color : ${props => props.theme.mainColor};
 export const Logo = styled(Link) `
 padding:10px;
 
+   
 img {
   width:50px;
 }
 
 
 `
+
+
+
+export const ButtonLink = styled(Link)`
+  padding: 5px;
+  width: 50px;
+`;

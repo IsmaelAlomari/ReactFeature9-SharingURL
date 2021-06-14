@@ -3,7 +3,7 @@ import { DeleteButtonStyled } from "../../styles";
 
 const DeleteButton = (props) => {
   return (
-    <DeleteButtonStyled onClick={props.deleteProduct}>
+    <DeleteButtonStyled className="btn btn-dark" onClick={props.deleteProduct}>
       Delete
     </DeleteButtonStyled>
   );
